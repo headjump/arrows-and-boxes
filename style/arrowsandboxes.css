@@ -1,0 +1,122 @@
+div.arrowsandboxes-wrapper {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.8em;
+	color: #444444;
+	margin: 20px 0;
+	overflow: auto;
+}
+
+pre.arrowsandboxes-source {
+	display: none;
+}
+
+pre.arrowsandboxes-source-with-errors {
+	background-color: #eeeeee;	
+	color: #999999;
+	border: 8px solid #FFF0F0;
+	border-bottom: none;
+	margin-bottom: 0;
+	padding: 8px 12px;
+	font-size: 12px;
+}
+
+div.arrowsandboxes-error {
+	color: #9A3A3A;
+	background-color: #FFF0F0;
+	padding: 8px 12px;
+}
+
+div.arrowsandboxes-error code {
+	font-size: 1.2em;
+}
+
+div.arrowsandboxes-powered-by {
+	display: none;
+}
+
+div.arrowsandboxes-node {
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	background-color: #eeeeee;
+	border: 2px solid #bbbbbb;
+	overflow: hidden;
+}
+
+div.arrowsandboxes-node-hovered {
+	overflow: visible;
+}
+
+div.arrowsandboxes-node-highlighted {
+	background-color: #bbeaff;
+	border-color: #55b1f1;
+}
+
+div.arrowsandboxes-node-title {
+	text-align: center;
+	font-size: 1.35em;
+	
+	margin: 2px;
+	padding: 3px;
+	color: #555555;
+	
+	background-color: #eeeeee;
+}
+
+div.arrowsandboxes-node-subtitle {
+	text-align: center;
+	font-size: 0.8em;
+	margin: 2px;
+	padding: 3px;
+	padding-top: 0;
+	color: #777777;
+	
+	background-color: #eeeeee;
+}
+
+div.arrowsandboxes-node-highlighted {
+	background-color: #bbeaff;
+	border-color: #55b1f1;
+}
+
+div.arrowsandboxes-node-highlighted div.arrowsandboxes-node-subtitle,
+div.arrowsandboxes-node-highlighted div.arrowsandboxes-node-title {
+	background-color: #bbeaff;
+}
+
+div.arrowsandboxes-label {
+	color: #444444;
+	padding: 3px 6px;
+}
+
+div.arrowsandboxes-label-hovered {
+	background-color: #fff3c5;
+}
+div.arrowsandboxes-label a,
+div.arrowsandboxes-label a:link,
+div.arrowsandboxes-label a:visited,
+div.arrowsandboxes-label a:hover,
+div.arrowsandboxes-label a:active,
+div.arrowsandboxes-label a:focus,
+div.arrowsandboxes-node-subtitle a,
+div.arrowsandboxes-node-subtitle a:link,
+div.arrowsandboxes-node-subtitle a:visited,
+div.arrowsandboxes-node-subtitle a:hover,
+div.arrowsandboxes-node-subtitle a:active,
+div.arrowsandboxes-node-subtitle a:focus,
+div.arrowsandboxes-node-title a,
+div.arrowsandboxes-node-title a:link,
+div.arrowsandboxes-node-title a:visited,
+div.arrowsandboxes-node-title a:hover,
+div.arrowsandboxes-node-title a:active,
+div.arrowsandboxes-node-title a:focus {
+	text-decoration: underline;
+	color: #d30927;
+}
+
+div.arrowsandboxes-label a:hover,
+div.arrowsandboxes-node-subtitle a:hover,
+div.arrowsandboxes-node-title a:hover {
+	text-decoration: none;
+	color: #e03945;
+}

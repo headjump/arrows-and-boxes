@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
+		<script type="text/javascript" src="http://www.headjump.de/javascripts/jquery_wz_jsgraphics.js"></script>
+		<script type="text/javascript" src="http://www.headjump.de/javascripts/arrowsandboxes.js"></script>
+		
+		<link type="text/css" rel="stylesheet" href="style/arrowsandboxes.css">
+	</head>
+	<style>
+		body {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+		}
+	</style>
+	<body>
+
+	
+<h2>About</h2>	
+	<p>
+		Draws nice boxes and arrows to your website from simple markup like <code>(User) &gt; (Admin)</code>
+	</p>
+	
+	<h3>Setup (it's easy!)</h3>
+	
+	<ul>
+		<li>
+			Put javascript links inside HTML head to <code>jquery.js, jquery.wz_jsgraphics.js, arrowsandboxes.js</code>
+		</li>
+		<li>
+			<p>
+			Place a &lt;pre&gt; block around your arrows-and-boxes markup and set the class to <code>arrows-and-boxes</code>:
+			</p>
+			<p>
+<em> &lt;pre class="arrows-and-boxes"&gt; (User) > (Admin) &lt;/pre&gt; </em>
+</p>
+			<p>
+			Arrows-and-boxes automatically detects the code and builds nice boxes and arrows from it.
+			</p>
+		</li>
+	</ul>
+	
+	<p style="color:darkred; background-color: #f8f7ea; padding: 10px;">
+		<strong>info</strong><br />
+		Different arrow types not jet implemented! Currently you only have normal lines, no arrows with directions. Will be added soon!
+	</p>	
+	
+	
+<h2>Basic example</h2>
+<p>
+Inline arrows and nodes:
+</p>		
+<pre class="arrowsandboxes">
+(Dennis) >likes (Food)
+</pre>
+
+<h2>Linking elswhere</h2>
+<p>
+	Writing <code>(node_id: My Node)</code> gives the node the id "node_id" (must be followed by ":"). You can use it to define a target for a link inside a node definition
+</p>		
+<pre>
+(Dennis >likes [d,m])
+(d:Drinks) (m:Money)
+</pre>
+<pre class="arrowsandboxes">
+(Dennis >likes [d,m])
+(d:Drinks) (m:Money)
+</pre>
+
+<h2>Different arrow types</h2>
+		
+<pre>
+() - (normal) > (one direction) < (other direction) <> (and back)
+</pre>
+<pre class="arrowsandboxes">
+() - (normal) > (one direction) < (other direction) <> (and back)
+</pre>
+
+<h2>Highlight nodes and arrows!</h2>
+		
+<pre>
+() > (boring) >> ((Highlighted))
+</pre>
+<pre class="arrowsandboxes">
+() > (boring) >> ((Highlighted))
+</pre>
+
+<h2>Use Dummy nodes to get more space</h2>
+		
+<pre>
+(Dennis) -likes () > (Food)
+</pre>
+<pre class="arrowsandboxes">
+(Dennis) -likes () > (Food)
+</pre>
+
+<h2>Use Dummy nodes to bend your arrows</h2>
+		
+<pre>
+(Dennis) - (>likes[f]) 
+() (f:Food)
+</pre>
+
+<pre class="arrowsandboxes">
+(Dennis) - (>likes[f]) 
+() (f:Food)
+</pre>
+
+
+<h2>Want subtitles?</h2>
+		
+<pre class="arrowsandboxes">
+(Dennis|has a subtitle)
+</pre>
+
+<h2>HTML in your texts</h2>
+		
+<pre class="arrowsandboxes">
+(Dennis) > {{<a href="http://www.headjump.de">links</a>}} (his {{<a href="http://www.headjump.de">Homepage</a>}})
+</pre>
+
+<h2>Custom classes for your nodes</h2>
+
+<p>
+	Writing <code>{{my_class_name}}</code> before the ":" that is used to seperate the node id from the title will add the classname to the created node. Inspect the element if you don't trust me:
+</p>		
+<pre class="arrowsandboxes">
+({custom_class}:Custom class)
+</pre>
+
+	</body>
+</html>
