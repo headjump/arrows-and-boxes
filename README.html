@@ -32,7 +32,7 @@
 			Place a &lt;pre&gt; block around your arrows-and-boxes markup and set the class to <code>arrows-and-boxes</code>:
 			</p>
 			<p>
-<em> &lt;pre class="arrows-and-boxes"&gt; (User) > (Admin) &lt;/pre&gt; </em>
+<em> &lt;pre class="arrows-and-boxes"&gt;</em> (User) > (Admin) <em>&lt;/pre&gt; </em>
 </p>
 			<p>
 			Arrows-and-boxes automatically detects the code and builds nice boxes and arrows from it.
@@ -57,6 +57,20 @@ Inline arrows and nodes:
 (Dennis) >likes (Food)
 </pre>
 
+<h2>Different arrow types</h2>
+
+<p style="color:darkred; background-color: #f8f7ea; padding: 10px;">
+	coming soon...
+</p>	
+
+		
+<pre>
+() - (normal) > (one direction) < (other direction) <> (and back)
+</pre>
+<pre class="arrows-and-boxes">
+() - (normal) > (one direction) < (other direction) <> (and back)
+</pre>
+
 <h2>Linking elswhere</h2>
 <p>
 	Writing <code>(node_id: My Node)</code> gives the node the id "node_id" (must be followed by ":"). You can use it to define a target for a link inside a node definition
@@ -68,15 +82,6 @@ Inline arrows and nodes:
 <pre class="arrows-and-boxes">
 (Dennis >likes [d,m])
 (d:Drinks) (m:Money)
-</pre>
-
-<h2>Different arrow types</h2>
-		
-<pre>
-() - (normal) > (one direction) < (other direction) <> (and back)
-</pre>
-<pre class="arrows-and-boxes">
-() - (normal) > (one direction) < (other direction) <> (and back)
 </pre>
 
 <h2>Highlight nodes and arrows!</h2>
@@ -111,7 +116,13 @@ Inline arrows and nodes:
 
 
 <h2>Want subtitles?</h2>
-		
+	
+<p>
+Writing a "|" after your title makes the rest of the text a subtitle. If it's too large to fit the boy, hover with your mouse to make it visible.
+</p>	
+<pre>
+(Dennis|has a subtitle)
+</pre>
 <pre class="arrows-and-boxes">
 (Dennis|has a subtitle)
 </pre>
@@ -127,6 +138,9 @@ Inline arrows and nodes:
 <p>
 	Writing <code>{{my_class_name}}</code> before the ":" that is used to seperate the node id from the title will add the classname to the created node. Inspect the element if you don't trust me:
 </p>		
+<pre>
+({custom_class}:Custom class)
+</pre>
 <pre class="arrows-and-boxes">
 ({custom_class}:Custom class)
 </pre>
