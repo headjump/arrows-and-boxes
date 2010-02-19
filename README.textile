@@ -1,0 +1,11 @@
+.h1 Arrows-and-boxes
+
+.h2 About
+
+Draws nice boxes and arrows to your website from simple markup like <code>(User) &gt; (Admin)</code>
+
+See here for "real demo!(Arrows-and-boxes demo at headjump.de)":http://www.headjump.de/article/arrows-and-boxes
+
+h2. Example screenshot of dynamically created drawing with javascript
+
+!http://www.headjump.de/assets/2010/2/19/arrows-and-boxes.jpg!:http://www.headjump.de/article/arrows-and-boxes
