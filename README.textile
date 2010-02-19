@@ -2,7 +2,7 @@ h2. Arrows-and-boxes
 
 h3. About
 
-Draws nice boxes and arrows to your website from simple markup like <code>(User) &gt; (Admin)</code>
+Draws nice boxes and arrows to your website from simple markup like <code>(User) > (Admin)</code>
 
 *See here for "demo and doc(Arrows-and-boxes demo at headjump.de)":http://www.headjump.de/article/arrows-and-boxes*
 
