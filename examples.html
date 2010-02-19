@@ -20,25 +20,34 @@
 	<p>
 		Draws nice boxes and arrows to your website from simple markup like <code>(User) &gt; (Admin)</code>
 	</p>
+<p>
+<a class="arrowed" href="http://github.com/headjump/arrows-and-boxes" title="Arrows-and-boxes from Dennis Treder at Github">Get or fork it at Github!</a>
+</p>
+	<p>
+		The following examples are no screenshots - they are dynamically created by Arrows-and-boxes with the code displayed above each example ;)
+	</p>
 	
 	<h3>Setup (it's easy!)</h3>
 	
-	<ul>
+	<ol>
 		<li>
 			Put javascript links inside HTML head to <code>jquery.js, jquery.wz_jsgraphics.js, arrowsandboxes.js</code>
+		</li>
+		<li>
+			Put a css link inside HTML head to <code>arrowsandboxes.css</code>
 		</li>
 		<li>
 			<p>
 			Place a &lt;pre&gt; block around your arrows-and-boxes markup and set the class to <code>arrows-and-boxes</code>:
 			</p>
 			<p>
-<em> &lt;pre class="arrows-and-boxes"&gt;</em> (User) > (Admin) <em>&lt;/pre&gt; </em>
+<strong><em> &lt;pre class="arrows-and-boxes"&gt;</em> (User) > (Admin) <em>&lt;/pre&gt; </em></strong>
 </p>
 			<p>
 			Arrows-and-boxes automatically detects the code and builds nice boxes and arrows from it.
 			</p>
 		</li>
-	</ul>
+	</ol>
 	
 	<p style="color:darkred; background-color: #f8f7ea; padding: 10px;">
 		<strong>info</strong><br />
@@ -62,7 +71,7 @@ Inline arrows and nodes:
 		Define a box with "( )", and a link with "&gt;", "&lt;", "-".
 	</li>
 	<li>
-		An arror can be put between Boxes in a single line, or inside a box, if the target is "further away" (see below for an example)
+		An arrow can be put between Boxes in a single line, or inside a box, if the target is "further away" (see below for an example)
 	</li>
 	<li>
 		Basic box format: <code>(box_title | box_subtitle)</code>
@@ -80,10 +89,16 @@ Inline arrows and nodes:
 
 		
 <pre>
-() - (normal) > (one direction) < (other direction) <> (and back)
+() - (normal)
+() > (one direction)
+() < (other direction)
+() <> (and back)
 </pre>
 <pre class="arrows-and-boxes">
-() - (normal) > (one direction) < (other direction) <> (and back)
+(arrow) - (normal)
+(arrow) > (one direction)
+(arrow) < (other direction)
+(arrow) <> (and back)
 </pre>
 
 <h2>Linking elswhere</h2>
@@ -119,6 +134,8 @@ Writing a "|" after your title makes the rest of the text a subtitle. If it's to
 (Dennis|has a subtitle)
 </pre>
 
+
+
 <h2>Highlight nodes and arrows!</h2>
 		
 <pre>
@@ -151,9 +168,15 @@ Writing a "|" after your title makes the rest of the text a subtitle. If it's to
 
 
 <h2>HTML in your texts</h2>
-		
+	
+<p>
+Put <code>{{ }}</code> around something let's you  use HTML inside node titles, subtitles and arrow labels. So you can use anything you like (images and stuff).
+</p>	
+<pre>
+(Dennis) > links ({{&lt;a href="http://www.headjump.de"&gt;headjump.de&lt;/a&gt;}})
+</pre>
 <pre class="arrows-and-boxes">
-(Dennis) > {{<a href="http://www.headjump.de">links</a>}} (his {{<a href="http://www.headjump.de">Homepage</a>}})
+(Dennis) >links ({{<a href="http://www.headjump.de">headjump.de</a>}})
 </pre>
 
 <h2>Custom classes for your nodes</h2>
@@ -167,6 +190,5 @@ Writing a "|" after your title makes the rest of the text a subtitle. If it's to
 <pre class="arrows-and-boxes">
 ({custom_class}:Custom class)
 </pre>
-
 	</body>
 </html>
