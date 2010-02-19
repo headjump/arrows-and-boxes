@@ -4,8 +4,16 @@ h3. About
 
 Draws nice boxes and arrows to your website from simple markup like <code>(User) &gt; (Admin)</code>
 
-*See here for "real demo!(Arrows-and-boxes demo at headjump.de)":http://www.headjump.de/article/arrows-and-boxes*
+*See here for "demo and doc(Arrows-and-boxes demo at headjump.de)":http://www.headjump.de/article/arrows-and-boxes*
 
 h3. Example screenshot of dynamically created drawing with javascript
 
+Click it to see real demo + doc!
 !http://www.headjump.de/assets/2010/2/19/arrows-and-boxes.jpg!:http://www.headjump.de/article/arrows-and-boxes
+
+*Code for the drawing above*
+
+<pre>
+(Dennis) >likes (Food >it's[t])
+() (t:tasty)
+</pre>
