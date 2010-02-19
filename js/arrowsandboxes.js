@@ -532,7 +532,7 @@
 	*/
 	var poweredBy = function () {
 		// TODO set link to project page, please ;)
-		return $('<div class="' + cssclass("powered-by")+ '"><a href="http://www.headjump.de" target="_blank" title="Javascript graph construction, node visualization, arrow drawing by headjump.de">Arrows-and-boxes powered by <strong>headjump.de</strong></a></div>');
+		return $('<div class="' + cssclass("powered-by")+ '"><a href="http://github.com/headjump/arrows-and-boxes" target="_blank" title="Javascript graph construction, node visualization, arrow drawing by headjump.de">Arrows-and-boxes powered by <strong>headjump.de</strong></a></div>');
 	}
 	
 	/**
