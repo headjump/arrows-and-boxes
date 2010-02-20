@@ -517,7 +517,7 @@
 			var arrow_target = $('<div class="' + cssclass("arrow-wrapper") + '"/>');
 			arrow_target.css("position", "absolute");
 			arrow_target.css("z-index", 0);
-			outer_wrapper.append(arrow_target);
+			outer_wrapper.prepend(arrow_target);
 			
 			for(var arrows_i = 0; arrows_i < arrows.length; arrows_i++) {
 				drawArrow(arrows[arrows_i], arrow_target, outer_wrapper, node_positions);
@@ -676,7 +676,7 @@
 				var lab = $('<div class="' + cssclass("label") + '" style="position: absolute; margin-top: ' + label_top + 'px; margin-left: ' + label_left + 'px;">' + deEscape(arrow["label"]) + '</div>');
 				lab.hover(	function() { $(this).addClass(cssclass("label-hovered")); }, 
 							function() { $(this).removeClass(cssclass("label-hovered")); });
-				target.append(lab);
+				outer_wrapper.append(lab);
 			}
 		}
 		
