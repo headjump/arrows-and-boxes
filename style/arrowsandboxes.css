@@ -6,6 +6,10 @@ div.arrowsandboxes-wrapper {
 	overflow: auto;
 }
 
+div.arrowsandboxes-graph-wrapper {
+	position: relative; /* greetings to ie 6*/
+}
+
 pre.arrowsandboxes-source {
 	display: none;
 }
