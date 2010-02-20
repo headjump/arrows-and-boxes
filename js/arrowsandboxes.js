@@ -166,7 +166,7 @@
 			if(line_arrows.length !== 0 && line_arrows[line_arrows.length - 1]["target_nodes"].length === 0) throw "last arrow in line has no target";
 			return { "nodes": line_nodes, "arrows": line_arrows };
 		} catch(e) {
-			throw "Error in line: " + original_line + "<br/>&nbsp;&nbsp;" + e;
+			throw "Error in line: " + deEscape("" + original_line) + "<br/>&nbsp;&nbsp;" + e;
 		}
 	}
 	
@@ -510,7 +510,7 @@
 			outer_wrapper.height(nodes.length * (CONFIG["node"]["height"] + CONFIG["node"]["margin_bottom"]));
 			
 		} catch(e) {
-			throw "Error processing nodelines while drawing: " + e + " " + e.message;
+			throw "Error processing nodelines while drawing: " + deEscape("" + e);
 		}
 		
 		try {
@@ -523,7 +523,7 @@
 				drawArrow(arrows[arrows_i], arrow_target, outer_wrapper, node_positions);
 			}
 		} catch(e) {
-			throw "Error drawing arrows: " + e + " " + e.message;
+			throw "Error drawing arrows: " + deEscape("" + e);
 		}
 	}
 	
@@ -760,7 +760,7 @@
 			el.addClass(cssclass("source"));
 			drawStructure(graph_wrapper, buildStructureFromLines(source.split('\n')));
 		} catch (e) {
-			el.after($('<div class="' + cssclass("error") + '">Something went wrong: <code>' + deEscape("" + e) + e.message + '</code></div>'));
+			el.after($('<div class="' + cssclass("error") + '">Something went wrong: <code>' + deEscape("" + e) + '</code></div>'));
 			el.removeClass(cssclass("source"));
 			el.addClass(cssclass("source-with-errors"));
 		}
