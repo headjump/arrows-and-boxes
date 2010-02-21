@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.wz_jsgraphics.js"></script>
+		<script type="text/javascript" src="js/arrowsandboxes.js"></script>
+		
+		<link type="text/css" rel="stylesheet" href="style/arrowsandboxes.css">		
+	</head>
+	<style>
+		body {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+		}
+	</style>
+	<body>
+
+	<script type="text/javascript">
+		var update_aab = function() {
+			(function($) {
+				$("#aab-des-container").empty().append("<pre class='aab-updated'/>");
+				var x = $("pre.aab-updated");
+				x.html($("#aab-source").val()).arrows_and_boxes();
+			})(jQuery);
+			setTimeout(update_aab, 1500);
+		}
+
+		setTimeout(update_aab, 1500);
+	</script>
+
+<h3>About</h3>
+<p>This is the preview editor for <a href="/article/arrows-and-boxes" title="Arrows-and-boxes documentation and examples">Arrows-and-boxes</a> - a javascript plugin that automatically draws nice arrows and boxes from simple markup.</p>
+<p>Enter your arrows-and-boxes code below - the preview will update itsels each some seconds.</a></p>
+<h3>Graph code</h3>
+<p>
+<textarea wrap="physical" id="aab-source" name="user_eingabe" cols="65" rows="8">(Editor) &gt; shows (Graph preview)</textarea>
+</p>
+
+<div id="aab-des-container">
+</div>
+
+	</body>
+</html>
