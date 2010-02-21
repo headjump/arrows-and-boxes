@@ -30,6 +30,11 @@ div.arrowsandboxes-error {
 	padding: 8px 12px;
 }
 
+div.arrowsandboxes-error a {
+	font-weight: bold;
+	color: #9A3A3A;
+}
+
 div.arrowsandboxes-error code {
 	font-size: 1.2em;
 }

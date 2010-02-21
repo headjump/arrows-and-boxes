@@ -785,8 +785,10 @@
 			}
 		} catch (e) {
 			var error_d = $('<div class="' + cssclass("error") + '"><p>Something went wrong: <code>' + deEscape("" + e) + '</code></p></div>');
-			d.append('<p>If you want to use arrows-and-boxes specific characters ("&gt;", "&lt";, "-", ":", "(", ")", "{", "}", "[", "]", "/") in your nodes or labels, you must put "{{" and "}}" around them.</p>')
-			d.append('<ul><li><a href="http://www.headjump.de/article/arrows-and-boxes" title="arrows-and-boxes documentation">Arrows-and-boxes documentation</a></li><li><a href="http://www.headjump.de/article/arrows-and-boxes-editor" title="arrows-and-boxes preview editor">Preview editor</a> - see immediately what your graph will look like and if it works.</li></ul>');
+			error_d.append('<p>Hint:</p><ul>'+
+							'<li>If you want to use HTML (e.g. links, images) or any arrows-and-boxes specific character ("&gt;", "&lt";, "-", ":", "(", ")", "{", "}", "[", "]", "/") in your nodes or labels, you must put "{{" and "}}" around them.</li>'+
+							'<li>See <a href="http://www.headjump.de/article/arrows-and-boxes" title="arrows-and-boxes documentation">Arrows-and-boxes documentation</a></li>'+
+							'<li>Immediately see what your graph will look like and if it works: <a href="http://www.headjump.de/article/arrows-and-boxes-editor" title="arrows-and-boxes preview editor">Preview editor</a></li></ul>');
 			el.after(error_d);
 			el.removeClass(cssclass("source"));
 			el.addClass(cssclass("source-with-errors"));
