@@ -21,18 +21,25 @@
 				$("#aab-des-container").empty().append("<pre class='aab-updated'/>");
 				var x = $("pre.aab-updated");
 				x.html($("#aab-source").val()).arrows_and_boxes();
+				if($("#aab_cb").attr("checked")) setTimeout(update_aab, 1500);
 			})(jQuery);
-			setTimeout(update_aab, 1500);
 		}
 
+		jQuery(function() {
+			$("#aab_cb").attr("checked", true);
+		});
+		
 		setTimeout(update_aab, 1500);
 	</script>
 
 <h3>About</h3>
-<p>This is the preview editor for <a href="/article/arrows-and-boxes" title="Arrows-and-boxes documentation and examples">Arrows-and-boxes</a> - a javascript plugin that automatically draws nice arrows and boxes from simple markup.</p>
-<p>Enter your arrows-and-boxes code below - the preview will update itsels each some seconds.</a></p>
+<p>This is the preview editor for <a href="http://www.headjump.de/article/arrows-and-boxes" title="Arrows-and-boxes documentation and examples">Arrows-and-boxes</a> - a javascript plugin that automatically draws nice arrows and boxes from simple markup.</p>
+<p>Enter your arrows-and-boxes code below - the preview will update itsels each some seconds.</p>
 
 <h3>Preview editor</h3>
+<p>
+<label for="aab_cb"><input ckecked="yes" type="checkbox" id="aab_cb" name="aab_cb" onchange="update_aab();"> auto update</label> | <a href="#" onclick="update_aab(); return false;">Update now</a>
+</p>
 <p>
 <textarea wrap="physical" id="aab-source" name="user_eingabe" cols="65" rows="8">(Editor) &gt; shows (Graph preview)</textarea>
 </p>
