@@ -14,6 +14,6 @@ Click it to see real demo + doc!
 *Code for the drawing above*
 
 <pre>
-(Dennis) >likes (Food >it's[t]) ||
+(Dennis) >likes ((Food >because it's[t])) ||
 () (t:tasty)
 </pre>
