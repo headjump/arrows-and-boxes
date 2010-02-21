@@ -39,7 +39,7 @@
 			"width": 146,
 			"height": 32,
 			"height_with_subtitle": 56,
-			"center_y": 18,
+			"center_y": 15,
 			"margin_right": 64,
 			"margin_bottom": 56,
 			"border_size": 2
