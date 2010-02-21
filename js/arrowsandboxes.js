@@ -695,14 +695,12 @@
 			if(arrow["label"] != "") {
 				var label_left = p1x + (Math.floor((p2x - p1x) / 2)) - 14;
 				var label_top = p1y + (Math.floor((p2y - p1y) / 2)) - 2;
-				var lab = $('<div class="' + cssclass("label") + '" style="position: absolute; margin-top: ' + label_top + 'px; margin-left: ' + label_left + 'px;">' + deEscape(arrow["label"]) + '</div>');
+				var lab = $('<div class="' + cssclass("label") + '" style="position: absolute; margin-top: ' + label_top + 'px; margin-left: ' + label_left + 'px;">' + deEscape(arrow["label"].split("|").join("<br/>")) + '</div>');
 				lab.hover(	function() { $(this).addClass(cssclass("label-hovered")); }, 
 							function() { $(this).removeClass(cssclass("label-hovered")); });
 				outer_wrapper.append(lab);
 			}
 		}
-		
-		//target.append('<div class="' + cssclass("arrow") + '">' + [arrow["type"] + (arrow["highlighted"] ? arrow["type"] : "") + (arrow["also_back"] ? " (and back)" : ""), deEscape(arrow["label"]), arrow["source_node"], arrow["target_nodes"]].join(" | ") + "</div>");
 	}
 	
 	var point_len = function(p1x,p1y,p2x,p2y) {
