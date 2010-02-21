@@ -698,9 +698,9 @@
 		if(l == 0) return [p1x, p1y];
 		var xd = p2x - p1x;
 		var yd = p2y - p1y;
-		var subx = (xd / l * 5);
+		var subx = (xd / l * 5);	// half of sub will be added later (hiding sharp edge of arrow above line with strokesize 2)
 		var suby = (yd / l * 5);
-		return [p1x + subx, p1y + suby, subx * 2, suby * 2];
+		return [p1x + subx, p1y + suby, subx, suby];
 	}
 	
 	/**
@@ -709,15 +709,31 @@
 	*/
 	var line = function(t,p1x, p1y, p2x, p2y, a_type, a_back, color, sub) {
 		var opt = { "stroke": 2, "color": color};
-		t.drawLine(p1x,p1y,p2x,p2y, opt);
+		
+		var ox = sub[0]; 	// offset in direction of line
+		var oy = sub[1];
+		var rx = oy;		// right angled to ox,oy
+		var ry = - ox;
 		
 		if(a_type === "<" || a_back) {
-			// start-arrow
+			// <-----
+			t.fillPolygon(	[p1x, p1x + ox + rx, p1x + ox - rx],
+							[p1y, p1y + oy + ry, p1y + oy - ry],
+							opt);
+			p1x += ox / 2;
+			p1y += oy / 2;
 		}
 		
 		if(a_type === ">" || a_back) {
-			// end-arrow
+			// ----->
+			t.fillPolygon(	[p2x, p2x - ox + rx, p2x - ox - rx],
+							[p2y, p2y - oy + ry, p2y - oy - ry],
+							opt);
+			p2x -= ox / 2;
+			p2y -= oy / 2;
 		}
+		
+		t.drawLine(p1x,p1y,p2x,p2y, opt);
 		
 	}
 	
