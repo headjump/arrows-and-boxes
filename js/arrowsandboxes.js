@@ -819,7 +819,7 @@
 		} catch (e) {
 			var error_d = $('<div class="' + cssclass("error") + '"><p>Something went wrong: <code>' + deEscape("" + e) + '</code></p></div>');
 			error_d.append('<p>Hint:</p><ul>'+
-							'<li>If you want to use HTML (e.g. links, images) or any arrows-and-boxes specific character ("&gt;", "&lt";, "-", ":", "(", ")", "{", "}", "[", "]", "|") in your nodes or labels, you must put "{{" and "}}" around them.</li>'+
+							'<li>To use HTML (e.g. for links, images) or any arrows-and-boxes specific character ("&gt;", "&lt";, "-", ":", "(", ")", "{", "}", "[", "]", "|") in your nodes or labels, put "{{" and "}}" around them.</li>'+
 							'<li>See <a href="http://www.headjump.de/article/arrows-and-boxes" title="arrows-and-boxes documentation">Arrows-and-boxes documentation</a></li>'+
 							'<li>Immediately see what your graph will look like and if it works: <a href="http://www.headjump.de/article/arrows-and-boxes-editor" title="arrows-and-boxes preview editor">Preview editor</a></li></ul>');
 			el.after(error_d);
