@@ -80,18 +80,32 @@ Inline arrows and nodes:
 	</li>
 </ul>
 
+<h2>New lines</h2>
+<p>
+Nodes will be placed after each other in one line. Start a new line with "||".
+</p>
+<pre>
+(Node1) (Node1_2) ||
+(Node2) || (Node3)
+</pre>
+<pre class="arrows-and-boxes">
+(Node1) (Node1_2) ||
+(Node2) || (Node3)
+</pre>
+
+
 <h2>Different arrow types</h2>
 		
 <pre>
-(arrow) - (normal)
-(arrow) > (one direction)
-(arrow) < (other direction)
+(arrow) - (normal) ||
+(arrow) > (one direction) ||
+(arrow) < (other direction) ||
 (arrow) <> (and back)
 </pre>
 <pre class="arrows-and-boxes">
-(arrow) - (normal)
-(arrow) > (one direction)
-(arrow) < (other direction)
+(arrow) - (normal) ||
+(arrow) > (one direction) ||
+(arrow) < (other direction) ||
 (arrow) <> (and back)
 </pre>
 
@@ -100,11 +114,11 @@ Inline arrows and nodes:
 	Writing <code>(node_id: My Node)</code> gives the node the id "node_id" (must be followed by ":"). You can use it to define a target for a link inside a node definition
 </p>		
 <pre>
-(Dennis >likes [d,m])
+(Dennis >likes [d,m]) ||
 (d:Drinks) (m:Money)
 </pre>
 <pre class="arrows-and-boxes">
-(Dennis >likes [d,m])
+(Dennis >likes [d,m]) ||
 (d:Drinks) (m:Money)
 </pre>
 <ul>
@@ -119,13 +133,13 @@ Inline arrows and nodes:
 <h2>Want subtitles?</h2>
 	
 <p>
-Writing a "|" after your title makes the rest of the text a subtitle. If it's too large to fit the boy, hover with your mouse to make it visible.
+Writing a "|" after your title makes the rest of the text a subtitle. If it's too large to fit the boy, hover with your mouse to make it visible. Using "|" on an arrow label will cause a line break.
 </p>	
 <pre>
-(Dennis|has a subtitle)
+(Dennis|has a subtitle) > label | new line (node)
 </pre>
 <pre class="arrows-and-boxes">
-(Dennis|has a subtitle)
+(Dennis|has a subtitle) > label | new line (node)
 </pre>
 
 
@@ -158,12 +172,12 @@ Dummy nodes can also have ids and arrows, so you can acutally use them as arrow-
 <h2>Use Dummy nodes to bend your arrows</h2>
 		
 <pre>
-(Dennis) - (>likes[f]) 
+(Dennis) - (>likes[f]) ||
 () (f:Food)
 </pre>
 
 <pre class="arrows-and-boxes">
-(Dennis) - (>likes[f]) 
+(Dennis) - (>likes[f]) ||
 () (f:Food)
 </pre>
 
