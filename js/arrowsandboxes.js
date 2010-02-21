@@ -7,7 +7,7 @@
  * 	(Dennis) >likes (Food)
  *
  * More complex example:
- * 	(Dennis >likes [f,d]) >>likes most (Saussages)
+ * 	(Dennis >likes [f,d]) >>likes most (Saussages) ||
  * 	(f:Food) (d:Drinks)
  *
  *
@@ -809,12 +809,12 @@
 		
 		try {
 			var source = el.html();
-			source = bulkReplace(source, ["\t", " ", "  ", " ", "&gt;", ">", "&lt;", "<"]);
+			source = bulkReplace(source, ["\n", " ", "\r", " ", "\t", " ", "  ", " ", "&gt;", ">", "&lt;", "<"]);
 			var graph_wrapper = $('<div class="' + cssclass("graph-wrapper") + '"/>');
 			el.before(graph_wrapper);
 
 			el.addClass(cssclass("source"));
-			drawStructure(graph_wrapper, buildStructureFromLines(source.split('\n')));
+			drawStructure(graph_wrapper, buildStructureFromLines(source.split('||')));
 			if(show_powerd_by_on_first_graph && ind === 0) {
 				el.before(poweredBy());
 			}
