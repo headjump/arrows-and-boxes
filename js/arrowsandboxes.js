@@ -587,7 +587,7 @@
 	* draws the given arrow
 	* @param arrow				hash describing arrow
 	* @param target				where to draw arrow to (== attach to)
-	* @param outer_wrapper		HTML parent of all current graph nodes. necessary to find them in DOM!
+	* @param outer_wrapper		HTML parent of all graph nodes - labels will be appended here (to appear above nodes)
 	* @param pos				hash with info on node positions: ["nodename"] => {"dummy", "x", "y", "center_x", "center_y"}
 	*/
 	var drawArrow = function (arrow, target, outer_wrapper, pos) {
@@ -710,6 +710,15 @@
 	var line = function(t,p1x, p1y, p2x, p2y, a_type, a_back, color, sub) {
 		var opt = { "stroke": 2, "color": color};
 		t.drawLine(p1x,p1y,p2x,p2y, opt);
+		
+		if(a_type === "<" || a_back) {
+			// start-arrow
+		}
+		
+		if(a_type === ">" || a_back) {
+			// end-arrow
+		}
+		
 	}
 	
 	/**
@@ -758,7 +767,7 @@
 	/**
 	* wraps and hides source, builds structure and finally "draws" the graph
 	*/
-	var createArrowsAndBoxes = function (ind,source,show_powerd_by_on_first_element) {
+	var createArrowsAndBoxes = function (ind,source,show_powerd_by_on_first_graph) {
 		var el = $(source);
 		var outer = $('<div class="' + cssclass("wrapper") + '" style="position: relative;"/>');
 		el.wrap(outer);
@@ -771,11 +780,14 @@
 
 			el.addClass(cssclass("source"));
 			drawStructure(graph_wrapper, buildStructureFromLines(source.split('\n')));
-			if(show_powerd_by_on_first_element && ind === 0) {
+			if(show_powerd_by_on_first_graph && ind === 0) {
 				el.before(poweredBy());
 			}
 		} catch (e) {
-			el.after($('<div class="' + cssclass("error") + '">Something went wrong: <code>' + deEscape("" + e) + '</code></div>'));
+			var error_d = $('<div class="' + cssclass("error") + '"><p>Something went wrong: <code>' + deEscape("" + e) + '</code></p></div>');
+			d.append('<p>If you want to use arrows-and-boxes specific characters ("&gt;", "&lt";, "-", ":", "(", ")", "{", "}", "[", "]", "/") in your nodes or labels, you must put "{{" and "}}" around them.</p>')
+			d.append('<ul><li><a href="http://www.headjump.de/article/arrows-and-boxes" title="arrows-and-boxes documentation">Arrows-and-boxes documentation</a></li><li><a href="http://www.headjump.de/article/arrows-and-boxes-editor" title="arrows-and-boxes preview editor">Preview editor</a> - see immediately what your graph will look like and if it works.</li></ul>');
+			el.after(error_d);
 			el.removeClass(cssclass("source"));
 			el.addClass(cssclass("source-with-errors"));
 		}
