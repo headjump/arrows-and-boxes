@@ -532,7 +532,10 @@
 	*/
 	var poweredBy = function () {
 		// TODO set link to project page, please ;)
-		return $('<div class="' + cssclass("powered-by")+ '"><a href="http://github.com/headjump/arrows-and-boxes" target="_blank" title="Javascript graph construction, node visualization, arrow drawing by headjump.de">Arrows-and-boxes powered by <strong>headjump.de</strong></a></div>');
+		return $('<div class="' + cssclass("powered-by")+ '">' +
+					'<a href="http://www.headjump.de/article/arrows-and-boxes" '+
+					'title="Javascript graph construction, node visualization, arrow drawing by headjump.de">'+
+					'Created by <span>Arrows-and-boxes</span>. Get it for free!</a></div>');
 	}
 	
 	/**
@@ -744,9 +747,18 @@
 	}
 	
 	/**
+	* registering jQuery method $().arrows_and_boxes();
+	* @param p	show powered_by at first element?
+	*/
+	$.fn.arrows_and_boxes = function(p) {
+		$(this).each(function(i,s) {createArrowsAndBoxes(i,s,p)});
+		return this;
+	}
+	
+	/**
 	* wraps and hides source, builds structure and finally "draws" the graph
 	*/
-	var createArrowsAndBoxes = function (source) {
+	var createArrowsAndBoxes = function (ind,source,show_powerd_by_on_first_element) {
 		var el = $(source);
 		var outer = $('<div class="' + cssclass("wrapper") + '" style="position: relative;"/>');
 		el.wrap(outer);
@@ -759,20 +771,21 @@
 
 			el.addClass(cssclass("source"));
 			drawStructure(graph_wrapper, buildStructureFromLines(source.split('\n')));
+			if(show_powerd_by_on_first_element && ind === 0) {
+				el.before(poweredBy());
+			}
 		} catch (e) {
 			el.after($('<div class="' + cssclass("error") + '">Something went wrong: <code>' + deEscape("" + e) + '</code></div>'));
 			el.removeClass(cssclass("source"));
 			el.addClass(cssclass("source-with-errors"));
 		}
 		
-		el.before(poweredBy());
 	};
  
 	/** 
 	* calls building funcitons for each pre with class 'arrowsandboxes'
 	*/
 	$(function(){
-		$('pre.' + prefix).each( function(i,s) {createArrowsAndBoxes(s)} );
-		$('pre.arrows-and-boxes').each( function(i,s) {createArrowsAndBoxes(s)} );
+		$('pre.' + prefix).add($('pre.arrows-and-boxes')).arrows_and_boxes(true);
 	});
  })(jQuery);
