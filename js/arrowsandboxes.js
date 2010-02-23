@@ -688,6 +688,10 @@
 				
 			}
 			
+			if(sub.length === 0) {
+				var tmp = shorten_line(p1x, p1y, p2x, p2y);
+				sub = [tmp[2], tmp[3]];
+			}
 			
 			line(target,p1x,p1y,p2x,p2y,arrow["type"],arrow["also_back"],color, sub);
 			
