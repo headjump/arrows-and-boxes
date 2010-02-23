@@ -550,8 +550,10 @@
 	/**
 	* builds a div with a link to the project page. Hidden by default css, it would be great if you help spread the the project if you like it ;)
 	*/
-	var poweredBy = function () {
+	var poweredBy = function (pre_code) {
 		// TODO set link to project page, please ;)
+		var editor_url = "preview-editor.html"
+		return $('<a href="' + editor_url + '?g=' + pre_code + '">edit</a>');
 		return $('<div class="' + cssclass("powered-by")+ '">' +
 					'<a href="http://www.headjump.de/article/arrows-and-boxes" '+
 					'title="Javascript graph construction, node visualization, arrow drawing by headjump.de">'+
@@ -795,17 +797,16 @@
 	
 	/**
 	* registering jQuery method $().arrows_and_boxes();
-	* @param p	show powered_by at first element?
 	*/
-	$.fn.arrows_and_boxes = function(p) {
-		$(this).each(function(i,s) {createArrowsAndBoxes(i,s,p)});
+	$.fn.arrows_and_boxes = function() {
+		$(this).each(function(i,s) {createArrowsAndBoxes(i,s)});
 		return this;
 	}
 	
 	/**
 	* wraps and hides source, builds structure and finally "draws" the graph
 	*/
-	var createArrowsAndBoxes = function (ind,source,show_powerd_by_on_first_graph) {
+	var createArrowsAndBoxes = function (ind,source) {
 		var el = $(source);
 		var outer = $('<div class="' + cssclass("wrapper") + '" style="position: relative;"/>');
 		el.wrap(outer);
@@ -818,9 +819,7 @@
 
 			el.addClass(cssclass("source"));
 			drawStructure(graph_wrapper, buildStructureFromLines(source.split('||')));
-			if(show_powerd_by_on_first_graph && ind === 0) {
-				el.before(poweredBy());
-			}
+			el.before(poweredBy(escape(el.html())));
 		} catch (e) {
 			var error_d = $('<div class="' + cssclass("error") + '"><p>Something went wrong: <code>' + deEscape("" + e) + '</code></p></div>');
 			error_d.append('<p>Hint:</p><ul>'+
@@ -838,6 +837,6 @@
 	* calls building funcitons for each pre with class 'arrowsandboxes'
 	*/
 	$(function(){
-		$('pre.' + prefix).add($('pre.arrows-and-boxes')).arrows_and_boxes(true);
+		$('pre.' + prefix).add($('pre.arrows-and-boxes')).arrows_and_boxes();
 	});
  })(jQuery);

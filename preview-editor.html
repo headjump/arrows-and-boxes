@@ -15,6 +15,11 @@
 	</style>
 	<body>
 
+<h3>About</h3>
+<p>This is the preview editor for <a href="http://www.headjump.de/article/arrows-and-boxes" title="Arrows-and-boxes documentation and examples">Arrows-and-boxes</a> - a javascript plugin that automatically draws nice arrows and boxes from simple markup.</p>
+<p>Enter your arrows-and-boxes code below - the preview will update itself each some seconds.</p>
+<p>This editor can only show you a live preview of what your drawing will look like. <strong>Go get your code back to your site don't forget to copy and paste it!</strong></p>
+
 	<script type="text/javascript">
 		var update_aab = function() {
 			(function($) {
@@ -27,26 +32,30 @@
 
 		jQuery(function() {
 			jQuery("#aab_cb").attr("checked", true);
+			var init_g = "(Editor) &gt; shows (Graph preview)";
+			var us = unescape(document.location.search);
+			if(us.indexOf("g=") != -1) {
+				init_g = unescape(us.substring(3));
+			}
+			jQuery("#aab-source").val(init_g);
 		});
 		
-		setTimeout(update_aab, 1500);
+		
+		setTimeout(update_aab, 800);
 	</script>
 
-<h3>About</h3>
-<p>This is the preview editor for <a href="http://www.headjump.de/article/arrows-and-boxes" title="Arrows-and-boxes documentation and examples">Arrows-and-boxes</a> - a javascript plugin that automatically draws nice arrows and boxes from simple markup.</p>
-<p>Enter your arrows-and-boxes code below - the preview will update itsels each some seconds.</p>
 
 <h3>Preview editor</h3>
 <p>
 <label for="aab_cb"><input ckecked="yes" type="checkbox" id="aab_cb" name="aab_cb" onchange="update_aab();"> auto update</label> | <a href="#" onclick="update_aab(); return false;">Update now</a>
 </p>
 <p>
-<textarea wrap="physical" id="aab-source" name="user_eingabe" cols="65" rows="8">(Editor) &gt; shows (Graph preview)</textarea>
+<textarea id="aab-source" name="user_eingabe" cols="65" rows="8"></textarea>
 </p>
 
 <div id="aab-des-container">
-</div>
-
+</div>	
+	
 <h3>Quick reference</h3>
 <table>
 <tr>
