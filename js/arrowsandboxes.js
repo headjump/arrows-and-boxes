@@ -526,7 +526,8 @@
 					}
 				}
 			}
-			outer_wrapper.height(nodes.length * (CONFIG["node"]["height"] + CONFIG["node"]["margin_bottom"]));
+			var normal_max_node_diff = CONFIG["node"]["height_with_subtitle"] - CONFIG["node"]["height"];
+			outer_wrapper.height(nodes.length * (CONFIG["node"]["height"] + CONFIG["node"]["margin_bottom"]) - CONFIG["node"]["margin_bottom"] + normal_max_node_diff);
 			
 		} catch(e) {
 			throw "Error processing nodelines while drawing: " + deEscape("" + e);
