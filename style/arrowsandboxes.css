@@ -42,7 +42,26 @@ div.arrowsandboxes-error code {
 }
 
 div.arrowsandboxes-powered-by {
+	display:none;
+	position: absolute;
+	margin-top: -12px;
+	font-size: 10px;
+	line-height: 12px;
+	color: #aaaaaa;
+}
+
+div.arrowsandboxes-powered-by span {
 	display: none;
+}
+
+div.arrowsandboxes-powered-by a,
+div.arrowsandboxes-powered-by a:hover {
+	color: #bbbbbb;
+	text-decoration: underline;
+}
+div.arrowsandboxes-wrapper-hovered div.arrowsandboxes-powered-by {
+	display: block;
+	zoom: 1;
 }
 
 div.arrowsandboxes-node {

@@ -553,7 +553,7 @@
 	var poweredBy = function (pre_code) {
 		// TODO set link to project page, please ;)
 		var editor_url = "preview-editor.html"
-		return $('<a href="' + editor_url + '?g=' + pre_code + '">edit</a>');
+		return $('<div class="' + cssclass("powered-by") + '"><a href="' + editor_url + '?g=' + pre_code + '">edit</a></div>');
 		return $('<div class="' + cssclass("powered-by")+ '">' +
 					'<a href="http://www.headjump.de/article/arrows-and-boxes" '+
 					'title="Javascript graph construction, node visualization, arrow drawing by headjump.de">'+
@@ -820,6 +820,10 @@
 			el.addClass(cssclass("source"));
 			drawStructure(graph_wrapper, buildStructureFromLines(source.split('||')));
 			el.before(poweredBy(escape(el.html())));
+			$(el.parent()).hover(
+				function(){ $(this).addClass(cssclass("wrapper-hovered")); },
+				function(){ $(this).removeClass(cssclass("wrapper-hovered")); }
+			);
 		} catch (e) {
 			var error_d = $('<div class="' + cssclass("error") + '"><p>Something went wrong: <code>' + deEscape("" + e) + '</code></p></div>');
 			error_d.append('<p>Hint:</p><ul>'+
@@ -831,7 +835,7 @@
 			el.addClass(cssclass("source-with-errors"));
 		}
 		
-	};
+	};	
  
 	/** 
 	* calls building funcitons for each pre with class 'arrowsandboxes'
