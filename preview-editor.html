@@ -21,6 +21,21 @@
 <p>This editor can only show you a live preview of what your drawing will look like. <strong>Go get your code back to your site don't forget to copy and paste it!</strong></p>
 
 	<script type="text/javascript">
+	var bulkReplace = function(source, replaces) {
+		if (replaces.length % 2 !== 0) throw "bulkReplace error: invalid replace pairs";
+		for(var i = 0; i < (replaces.length / 2); i++) {
+			var replace_this = replaces[i * 2];
+			var with_that = replaces[(i * 2) + 1];
+			var pos = source.indexOf(replace_this);
+			
+			while(pos != -1) {
+				source = source.substring(0, pos) + with_that + source.substring(pos + replace_this.length);
+				pos = source.indexOf(replace_this);
+			}
+		}
+		return source;
+	}
+
 		var update_aab = function() {
 			(function($) {
 				$("#aab-des-container").empty().append("<pre class='aab-updated'/>");
@@ -37,7 +52,7 @@
 			if(us.indexOf("g=") != -1) {
 				init_g = unescape(us.substring(3));
 			}
-			jQuery("#aab-source").val(init_g);
+			jQuery("#aab-source").val(bulkReplace(init_g, ["&gt;", ">", "&lt;", "<"]));
 		});
 		
 		
