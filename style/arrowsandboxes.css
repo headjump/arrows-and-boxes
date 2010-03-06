@@ -44,21 +44,35 @@ div.arrowsandboxes-error code {
 div.arrowsandboxes-powered-by {
 	display:none;
 	position: absolute;
-	margin-top: -12px;
+	margin-top: -14px;
 	font-size: 10px;
 	line-height: 12px;
 	color: #aaaaaa;
+	padding: 2px 4px;
 }
 
 div.arrowsandboxes-powered-by span {
 	display: none;
 }
 
+div.arrowsandboxes-powered-by-hovered {
+	background-color: #ffffff;
+}
+
+div.arrowsandboxes-powered-by-hovered span {
+	display: inline;
+}
+
 div.arrowsandboxes-powered-by a,
 div.arrowsandboxes-powered-by a:hover {
 	color: #bbbbbb;
+	text-decoration: none;
+}
+
+div.arrowsandboxes-powered-by a:hover {
 	text-decoration: underline;
 }
+
 div.arrowsandboxes-wrapper-hovered div.arrowsandboxes-powered-by {
 	display: block;
 	zoom: 1;

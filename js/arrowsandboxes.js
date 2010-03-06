@@ -552,12 +552,13 @@
 	*/
 	var poweredBy = function (pre_code) {
 		// TODO set link to project page, please ;)
-		var editor_url = "preview-editor.html"
-		return $('<div class="' + cssclass("powered-by") + '"><a href="' + editor_url + '?g=' + pre_code + '">edit</a></div>');
-		return $('<div class="' + cssclass("powered-by")+ '">' +
-					'<a href="http://www.headjump.de/article/arrows-and-boxes" '+
+		var editor_url = "http://www.headjump.de/article/arrows-and-boxes-edito"; //"preview-editor.html"
+		return $('<div class="' + cssclass("powered-by") + '"><a href="' + editor_url + '?g=' + pre_code + '">Edit<span> with preview editor</span></a><span> | <a href="http://www.headjump.de/article/arrows-and-boxes" '+
 					'title="Javascript graph construction, node visualization, arrow drawing by headjump.de">'+
-					'Created by <span>Arrows-and-boxes</span>. Get it for free!</a></div>');
+					'Made with Arrows-and-boxes</a></span></div>').hover(
+						function(){ $(this).addClass(cssclass("powered-by-hovered")); },
+						function(){ $(this).removeClass(cssclass("powered-by-hovered")); }
+					);
 	}
 	
 	/**
