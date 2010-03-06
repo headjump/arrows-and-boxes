@@ -553,7 +553,7 @@
 	var poweredBy = function (pre_code) {
 		// TODO set link to project page, please ;)
 		var editor_url = "http://www.headjump.de/article/arrows-and-boxes-editor"; //"preview-editor.html"
-		return $('<div class="' + cssclass("powered-by") + '"><a href="' + editor_url + '?g=' + pre_code + '">Edit<span> with preview editor</span></a><span> | <a href="http://www.headjump.de/article/arrows-and-boxes" '+
+		return $('<div class="' + cssclass("powered-by") + '"><a href="' + editor_url + '?g=' + pre_code + '">Edit<span> in preview editor</span></a><span> | <a href="http://www.headjump.de/article/arrows-and-boxes" '+
 					'title="Javascript graph construction, node visualization, arrow drawing by headjump.de">'+
 					'Made with Arrows-and-boxes</a></span></div>').hover(
 						function(){ $(this).addClass(cssclass("powered-by-hovered")); },

@@ -66,6 +66,7 @@ div.arrowsandboxes-powered-by-hovered span {
 div.arrowsandboxes-powered-by a,
 div.arrowsandboxes-powered-by a:hover {
 	color: #bbbbbb;
+	font-weight: normal;
 	text-decoration: none;
 }
 
