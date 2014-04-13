@@ -1,5 +1,7 @@
 h2. Arrows-and-boxes
 
+*DEPRECATION NOTE:* _This repo is deprecated. You can use it if you like and the code works ok, even if I wrote it before I got to used to testing (you can find a lot of plugins like this...). But it has poor extendibility (not to speak about the internal structure) and it heavely relates on an unperformant and very outdated js drawing plugin. I basically used if for sequence diagrams, but for those I'd rather suggest you take a look at http://bramp.github.io/js-sequence-diagrams/_
+
 h3. About
 
 Draws nice boxes and arrows to your website from simple markup like <code>(User) > (Admin)</code>
